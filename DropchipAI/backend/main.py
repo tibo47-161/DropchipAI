@@ -2,6 +2,8 @@
 # DropchipAI Main Module
 # Dieses Modul dient als Einstiegspunkt fuer die DropchipAI-Anwendung.
 
+
+import sys, os; sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 import argparse
 import sys
 from pathlib import Path
@@ -11,6 +13,25 @@ sys.path.insert(0, str(Path(__file__).parent))
 from src.core.DropchipCore import DropchipCore
 from src.core.config_manager import ConfigManager
 from src.utils.logger import Logger
+
+from fastapi import FastAPI, Response
+from fastapi.middleware.cors import CORSMiddleware
+from src.api import auth, subscription
+
+app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+app.include_router(auth.router)
+app.include_router(subscription.router)
+
+@app.options("/api/auth/login")
+async def options_login():
+    return Response(status_code=200)
 
 def main():
     
@@ -46,24 +67,7 @@ def main():
 
 if __name__ == "__main__":
     import sys
-    from fastapi import FastAPI, Response
-    from fastapi.middleware.cors import CORSMiddleware
     import uvicorn
-    from src.api import auth, subscription
-    app = FastAPI()
-    app.add_middleware(
-        CORSMiddleware,
-        allow_origins=["http://localhost:3000"],
-        allow_credentials=True,
-        allow_methods=["*"],
-        allow_headers=["*"],
-    )
-    app.include_router(auth.router)
-    app.include_router(subscription.router)
-    # Expliziter OPTIONS-Handler für /api/auth/login (CORS-Preflight)
-    @app.options("/api/auth/login")
-    async def options_login():
-        return Response(status_code=200)
     if len(sys.argv) > 1:
         main()
     else:
