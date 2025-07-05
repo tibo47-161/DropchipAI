@@ -1,0 +1,32 @@
+# DropchipAI Einstellungen
+# Diese Datei enthält die Konfiguration für die DropchipAI-Anwendung
+
+general:
+  log_level: INFO
+  data_dir: ./data
+  max_concurrent_jobs: 5
+
+api:
+  timeout: 30
+  retry_attempts: 3
+  rate_limit_delay: 1
+
+ai:
+  min_profit_margin: 0.3
+  min_trend_score: 70
+  default_language: de
+  supplier_price_weight: 0.4
+  supplier_rating_weight: 0.3
+  supplier_delivery_weight: 0.3
+
+automation:
+  auto_create_listings: false
+  auto_update_prices: false
+  price_update_interval: 24  # Stunden
+  inventory_check_interval: 6  # Stunden
+
+notifications:
+  email_enabled: false
+  webhook_enabled: false
+  slack_enabled: false
+

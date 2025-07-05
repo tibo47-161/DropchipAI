@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>404 - Seite nicht gefunden | DropchipAI</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+      }
+      
+      .container {
+        max-width: 600px;
+        padding: 40px 20px;
+      }
+      
+      h1 {
+        font-size: 4rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+      }
+      
+      p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        opacity: 0.8;
+      }
+      
+      .btn {
+        display: inline-block;
+        background: linear-gradient(45deg, #ffd700, #ffed4e);
+        color: #333;
+        text-decoration: none;
+        padding: 12px 24px;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+      }
+      
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>404</h1>
+      <h2>Seite nicht gefunden</h2>
+      <p>
+        Die angeforderte Seite konnte nicht gefunden werden. 
+        Möglicherweise wurde sie verschoben oder existiert nicht mehr.
+      </p>
+      <a href="/" class="btn">Zurück zur Startseite</a>
+    </div>
+    
+    <script>
+      // Redirect to home page for SPA routing
+      setTimeout(function() {
+        window.location.href = '/';
+      }, 5000);
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,74 @@
+```
+DropchipAi Projektstruktur
+==========================
+
+docs/                 # Dokumentation
+├── README.md                    # Allgemeine Projektbeschreibung
+├── project_overview.md          # Detaillierte Projektübersicht
+├── technical_documentation.md   # Technische Dokumentation
+├── user_manual_organized.md     # Benutzerhandbuch
+├── improvement_deployment_strategy.md  # Verbesserungsplan und Deployment-Strategie
+├── commercial_deployment_strategy.md   # Kommerzielle Deployment-Strategie
+├── project_improvement_summary.md      # Zusammenfassung der Projektverbesserungen
+├── presentation.md              # Projektpräsentation
+└── LICENSE.txt                  # Lizenzinformationen
+
+frontend/             # Frontend-Komponenten (React.js)
+├── components/       # Wiederverwendbare UI-Komponenten
+│   ├── Dashboard.js             # Hauptdashboard mit Visualisierungen
+│   ├── WorkflowAutomation.js    # Komponente für Workflow-Automatisierung
+│   └── StockMonitor.js          # Komponente für Bestandsüberwachung
+├── contexts/         # Globale Zustandsverwaltung
+│   ├── AuthContext.js           # Authentifizierungskontext
+│   ├── SubscriptionContext.js   # Abonnementverwaltung
+│   └── ThemeContext.js          # Themenverwaltung (Hell/Dunkel)
+├── layouts/          # Seitenlayouts
+│   ├── MainLayout.js            # Hauptlayout für authentifizierte Benutzer
+│   └── AuthLayout.js            # Layout für Authentifizierungsseiten
+├── pages/            # Hauptseiten der Anwendung
+│   ├── Login.js                 # Login-Seite
+│   ├── Register.js              # Registrierungsseite
+│   ├── ForgotPassword.js        # Passwort-Zurücksetzen-Seite
+│   ├── Subscription.js          # Abonnementverwaltungsseite
+│   ├── App.js                   # Hauptanwendungskomponente
+│   ├── dashboard.jsx            # Dashboard-Seite
+│   ├── bulk_lister.jsx          # Bulk-Listing-Tool
+│   └── product_research.jsx     # Produktrecherche-Tool
+└── services/         # API-Dienste
+    └── api.js                   # API-Serviceschicht für Backend-Kommunikation
+
+backend/              # Backend-Komponenten (Python)
+├── src/
+│   ├── core/         # Kernkomponenten
+│   │   ├── automation.py        # Automatisierungsmanager
+│   │   └── config_manager.py    # Konfigurationsmanager
+│   ├── utils/        # Hilfsfunktionen
+│   │   ├── logger.py            # Logging-Funktionalität
+│   │   └── data_loader.py       # Datenlader
+│   ├── api/          # API-Integrationen
+│   │   ├── shopify/  # Shopify-Integration
+│   │   │   ├── __init__.py
+│   │   │   └── connector.py     # Shopify-Connector
+│   │   └── ebay/     # eBay-Integration
+│   │       ├── __init__.py
+│   │       └── connector.py     # eBay-Connector
+│   └── ai/           # KI-Module
+│       ├── product_research.py  # Produktrecherche
+│       ├── supplier_scorer.py   # Lieferantenbewertung
+│       └── listing_generator.py # Listing-Generator
+├── config/           # Konfigurationsdateien
+├── main.py           # Haupteinstiegspunkt
+└── requirements.txt  # Python-Abhängigkeiten
+
+tests/                # Tests
+├── frontend/         # Frontend-Tests
+└── backend/          # Backend-Tests
+    ├── test_core.py             # Tests für Core-Funktionalität
+    ├── test_automation.py       # Tests für Automatisierungsmanager
+    ├── test_config_manager.py   # Tests für Konfigurationsmanager
+    ├── test_product_research.py # Tests für Produktrecherche
+    ├── test_supplier_scorer.py  # Tests für Lieferantenbewertung
+    ├── test_listing_generator.py # Tests für Listing-Generator
+    ├── test_shopify_connector.py # Tests für Shopify-Connector
+    └── test_ebay_connector.py   # Tests für eBay-Connector
+```

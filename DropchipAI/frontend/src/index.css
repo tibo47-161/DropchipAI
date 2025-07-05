@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-400 font-sans;
+}
+
+/* Backup: vorherige index.css */ 
