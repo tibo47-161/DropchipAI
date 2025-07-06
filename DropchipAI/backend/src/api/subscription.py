@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-router = APIRouter(prefix="/api/subscription", tags=["subscription"])
+router = APIRouter(tags=["subscription"])
 
 @router.get("/status")
 def get_subscription_status():

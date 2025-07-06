@@ -54,7 +54,7 @@ def create_access_token(data: dict, expires_delta: timedelta = None):
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/auth/login")
 
 # FastAPI Router
-router = APIRouter(prefix="/api/auth", tags=["auth"])
+router = APIRouter(tags=["auth"])
 
 # Hilfsfunktion: User aus DB holen
 def get_user_by_email(db: Session, email: str):

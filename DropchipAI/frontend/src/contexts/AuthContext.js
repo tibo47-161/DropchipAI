@@ -59,9 +59,11 @@ export function AuthProvider({ children }) {
       const response = await api.post('/auth/login', data, {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
       });
+      console.log('Login-Response:', response);
+      console.log('Login-Response data:', response.data);
       // Robust gegen fehlende Felder im Response
-      const access_token = response.data?.access_token || response.data?.token;
-      const role = response.data?.role || 'user';
+      const access_token = response?.access_token || response?.token;
+      const role = response?.role || 'user';
       if (!access_token) throw new Error('No access token in response');
       localStorage.setItem('token', access_token);
       api.setAuthToken(access_token);

@@ -85,11 +85,5 @@ def main():
 
 if __name__ == "__main__":
     import uvicorn
-    
-    # Check if running as CLI or web server
-    if len(sys.argv) > 1:
-        main()
-    else:
-        # Get port from environment variable (for Render)
-        port = int(os.environ.get("PORT", 8000))
-        uvicorn.run(app, host="0.0.0.0", port=port)
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)

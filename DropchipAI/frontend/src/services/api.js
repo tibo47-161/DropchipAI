@@ -197,7 +197,7 @@ const apiService = {
   // Analytics endpoints
   getDashboardStats: async () => {
     try {
-      const response = await api.get('/analytics/dashboard');
+      const response = await api.get('/auth/analytics/dashboard');
       return response.data;
     } catch (error) {
       throw error;
