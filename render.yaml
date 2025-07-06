@@ -6,6 +6,6 @@ services:
     startCommand: cd DropchipAI/backend && uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: PYTHON_VERSION
-        value: 3.11.9
+        value: 3.11.8
       - key: PORT
         value: 10000 
