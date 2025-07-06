@@ -2,40 +2,58 @@
 # DropchipAI Main Module
 # Dieses Modul dient als Einstiegspunkt fuer die DropchipAI-Anwendung.
 
-
-import sys, os; sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-import argparse
+import os
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent))
+# Add the current directory to Python path for imports
+current_dir = Path(__file__).parent
+sys.path.insert(0, str(current_dir))
 
-from src.core.DropchipCore import DropchipCore
-from src.core.config_manager import ConfigManager
-from src.utils.logger import Logger
+try:
+    from src.core.DropchipCore import DropchipCore
+    from src.core.config_manager import ConfigManager
+    from src.utils.logger import Logger
+    from fastapi import FastAPI, Response
+    from fastapi.middleware.cors import CORSMiddleware
+    from src.api import auth, subscription
+except ImportError as e:
+    print(f"Import error: {e}")
+    print(f"Current directory: {os.getcwd()}")
+    print(f"Python path: {sys.path}")
+    raise
 
-from fastapi import FastAPI, Response
-from fastapi.middleware.cors import CORSMiddleware
-from src.api import auth, subscription
+app = FastAPI(title="DropchipAI API", version="1.0.0")
 
-app = FastAPI()
+# CORS configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=["*"],  # In production, specify exact origins
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-app.include_router(auth.router)
-app.include_router(subscription.router)
+
+# Include routers
+app.include_router(auth.router, prefix="/api/auth", tags=["Authentication"])
+app.include_router(subscription.router, prefix="/api/subscription", tags=["Subscription"])
+
+@app.get("/")
+async def root():
+    return {"message": "DropchipAI API is running", "version": "1.0.0"}
+
+@app.get("/health")
+async def health_check():
+    return {"status": "healthy", "python_version": sys.version}
 
 @app.options("/api/auth/login")
 async def options_login():
     return Response(status_code=200)
 
+# CLI functionality (only if run directly)
 def main():
+    import argparse
     
-    # Kommandozeilenargumente parsen
     parser = argparse.ArgumentParser(description='DropchipAi - KI-gestuetzte Dropshipping-Automatisierung')
     parser.add_argument('--config', type=str, help='Pfad zur Konfigurationsdatei')
     parser.add_argument('--log-level', type=str, default='INFO', 
@@ -66,9 +84,12 @@ def main():
         print("Verwendung: python main.py --keywords 'Smart Watch' 'Wireless Earbuds'")
 
 if __name__ == "__main__":
-    import sys
     import uvicorn
+    
+    # Check if running as CLI or web server
     if len(sys.argv) > 1:
         main()
     else:
-        uvicorn.run(app, host="0.0.0.0", port=8000)
+        # Get port from environment variable (for Render)
+        port = int(os.environ.get("PORT", 8000))
+        uvicorn.run(app, host="0.0.0.0", port=port)
