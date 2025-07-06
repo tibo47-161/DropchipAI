@@ -1,0 +1,85 @@
+version: '3.8'
+
+services:
+  # Backend service
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: dropchipai-backend-prod
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONPATH=/app
+      - PORT=8000
+      - DATABASE_URL=postgresql://dropchipai:${DB_PASSWORD}@db:5432/dropchipai
+    volumes:
+      - ./DropchipAI/backend/logs:/app/logs
+    networks:
+      - dropchipai-network
+    restart: unless-stopped
+    depends_on:
+      - db
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Frontend service
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: dropchipai-frontend-prod
+    ports:
+      - "80:80"
+    networks:
+      - dropchipai-network
+    restart: unless-stopped
+    depends_on:
+      - backend
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # PostgreSQL database for production
+  db:
+    image: postgres:15-alpine
+    container_name: dropchipai-db-prod
+    environment:
+      - POSTGRES_DB=dropchipai
+      - POSTGRES_USER=dropchipai
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - dropchipai-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dropchipai -d dropchipai"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Redis for caching (optional)
+  redis:
+    image: redis:7-alpine
+    container_name: dropchipai-redis-prod
+    networks:
+      - dropchipai-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+networks:
+  dropchipai-network:
+    driver: bridge
+
+volumes:
+  postgres_data: 

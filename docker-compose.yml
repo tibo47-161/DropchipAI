@@ -1,0 +1,52 @@
+services:
+  # Backend service
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: dropchipai-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONPATH=/app
+      - PORT=8000
+    volumes:
+      - ./DropchipAI/backend/logs:/app/logs
+      - ./users.db:/app/users.db
+    networks:
+      - dropchipai-network
+    restart: unless-stopped
+    depends_on:
+      - db
+
+  # Frontend service
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: dropchipai-frontend
+    ports:
+      - "3000:80"
+    networks:
+      - dropchipai-network
+    restart: unless-stopped
+    depends_on:
+      - backend
+
+  # Database service (SQLite for development, can be replaced with PostgreSQL for production)
+  db:
+    image: alpine:latest
+    container_name: dropchipai-db
+    volumes:
+      - ./users.db:/data/users.db
+    networks:
+      - dropchipai-network
+    restart: unless-stopped
+    command: sh -c "echo 'SQLite database volume mounted' && tail -f /dev/null"
+
+networks:
+  dropchipai-network:
+    driver: bridge
+
+volumes:
+  db-data: 

@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, Depends, status
+from fastapi import APIRouter, HTTPException, Depends, status, FastAPI
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from sqlalchemy import create_engine, Column, Integer, String, DateTime
 from sqlalchemy.orm import sessionmaker, declarative_base, Session
@@ -121,4 +121,18 @@ with SessionLocal() as db:
         admin = User(email="admin@dropchipai.local", password_hash=get_password_hash("admin123"), role="admin")
         db.add(admin)
         db.commit()
-        print("[INFO] Default admin user created: admin@dropchipai.local / admin123") 
+        print("[INFO] Default admin user created: admin@dropchipai.local / admin123")
+
+# Analytics-Dummy-Endpunkt
+@router.get("/analytics/dashboard")
+def get_dashboard_stats():
+    return {
+        "totalUsers": 123,
+        "activeUsers": 45,
+        "totalRevenue": 6789.99,
+        "conversionRate": 0.12,
+        "topProducts": [
+            {"name": "Smart Watch", "sales": 120},
+            {"name": "Wireless Earbuds", "sales": 95}
+        ]
+    } 

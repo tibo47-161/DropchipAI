@@ -1,0 +1,39 @@
+# Frontend Dockerfile - Multi-stage build
+FROM node:18-alpine AS builder
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+COPY DropchipAI/frontend/package*.json ./frontend/
+
+# Install dependencies
+RUN npm install
+RUN cd frontend && npm install
+
+# Copy source code
+COPY DropchipAI/frontend/ ./frontend/
+COPY tailwind.config.js postcss.config.js ./
+
+# Build the application
+RUN cd frontend && npm run build
+
+# Production stage
+FROM nginx:alpine
+
+# Copy built application
+COPY --from=builder /app/frontend/build /usr/share/nginx/html
+
+# Copy nginx configuration
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Expose port
+EXPOSE 80
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost/ || exit 1
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"] 
