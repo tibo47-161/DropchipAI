@@ -44,35 +44,24 @@ export function AuthProvider({ children }) {
   const login = async (email, password) => {
     try {
       setError('');
-      // PRIVATER BYPASS: Wenn ein spezielles Passwort verwendet wird, logge direkt als Admin ein
-      if (email === 'admin@dropchipai.local' && password === 'meinbypasspasswort') {
-        const fakeToken = 'bypass-token';
-        localStorage.setItem('token', fakeToken);
-        api.setAuthToken(fakeToken);
-        setCurrentUser({ email, role: 'admin' });
-        setIsAuthenticated(true);
-        return { email, role: 'admin' };
-      }
+      // SICHERHEITSHINWEIS: Der hartcodierte Passwort-Bypass wurde entfernt.
       const data = new URLSearchParams();
       data.append('username', email);
       data.append('password', password);
       const response = await api.post('/auth/login', data, {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
       });
-      console.log('Login-Response:', response);
-      console.log('Login-Response data:', response.data);
-      // Robust gegen fehlende Felder im Response
-      const access_token = response?.access_token || response?.token;
-      const role = response?.role || 'user';
+      const access_token = response.access_token || response.token;
+      const role = response.role || 'user';
       if (!access_token) throw new Error('No access token in response');
       localStorage.setItem('token', access_token);
       api.setAuthToken(access_token);
-      setCurrentUser({ email, role });
-      setIsAuthenticated(true);
-      return { email, role };
+      // Nach erfolgreichem Login die Benutzerdaten abrufen, um den Context-Status zu setzen.
+      await checkAuthStatus(access_token);
+      return true; // Erfolg signalisieren
     } catch (error) {
       console.error('Login failed:', error);
-      setError(error.response?.data?.message || error.message || 'Failed to login');
+      setError(error.response?.data?.message || 'Login fehlgeschlagen');
       throw error;
     }
   };

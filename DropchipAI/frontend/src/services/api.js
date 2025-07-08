@@ -110,33 +110,8 @@ const apiService = {
   },
   
   // AI-specific endpoints
-  useAiTokens: async (feature, amount) => {
-    try {
-      const response = await api.post('/ai/use-tokens', { feature, amount });
-      return response.data;
-    } catch (error) {
-      throw error;
-    }
-  },
   
   // Product research endpoints
-  searchProducts: async (query, filters = {}) => {
-    try {
-      const response = await api.post('/products/search', { query, ...filters });
-      return response.data;
-    } catch (error) {
-      throw error;
-    }
-  },
-  
-  getTrendingProducts: async (category = 'all', limit = 10) => {
-    try {
-      const response = await api.get(`/products/trending?category=${category}&limit=${limit}`);
-      return response.data;
-    } catch (error) {
-      throw error;
-    }
-  },
   
   // Supplier endpoints
   getSuppliers: async (filters = {}) => {
@@ -206,7 +181,7 @@ const apiService = {
   
   getRevenueStats: async (period = 'month') => {
     try {
-      const response = await api.get(`/analytics/revenue?period=${period}`);
+      const response = await api.get(`/auth/analytics/revenue?period=${period}`);
       return response.data;
     } catch (error) {
       throw error;

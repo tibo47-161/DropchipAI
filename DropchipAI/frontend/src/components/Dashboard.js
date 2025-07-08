@@ -70,8 +70,15 @@ export default function Dashboard() {
         ]);
         
         // Fetch trending products
-        const trending = await api.getTrendingProducts('all', 5);
-        setTrendingProducts(trending);
+        // HINWEIS: Die API-Route für 'getTrendingProducts' existiert nicht im Backend.
+        // Daher wird hier mit Mock-Daten gearbeitet, bis die Route implementiert ist.
+        setTrendingProducts([
+          { id: 1, name: 'Wireless Charging Pad', price: 25.99, sales: 120, trendScore: 95, image: 'https://via.placeholder.com/150/8884d8/ffffff?text=Product' },
+          { id: 2, name: 'Smart Water Bottle', price: 49.99, sales: 95, trendScore: 92, image: 'https://via.placeholder.com/150/00C49F/ffffff?text=Product' },
+          { id: 3, name: 'Portable Blender', price: 34.50, sales: 88, trendScore: 88, image: 'https://via.placeholder.com/150/FFBB28/ffffff?text=Product' },
+          { id: 4, name: 'Sunrise Alarm Clock', price: 55.00, sales: 75, trendScore: 85, image: 'https://via.placeholder.com/150/FF8042/ffffff?text=Product' },
+          { id: 5, name: 'Eco-Friendly Reusable Bags', price: 15.99, sales: 210, trendScore: 82, image: 'https://via.placeholder.com/150/82ca9d/ffffff?text=Product' },
+        ]);
         
         // Mock top suppliers
         setTopSuppliers([
@@ -210,12 +217,10 @@ export default function Dashboard() {
                 </div>
                 <div className="ml-5 w-0 flex-1">
                   <dl>
-                    <dt className={`text-sm font-medium truncate ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-                      Total Revenue
-                    </dt>
+                    <dt className={`text-sm font-medium truncate ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Total Revenue</dt>
                     <dd>
                       <div className={`text-lg font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                        {formatCurrency(stats.totalRevenue)}
+                        {formatCurrency(stats?.totalRevenue ?? 0)}
                       </div>
                     </dd>
                   </dl>
@@ -234,12 +239,10 @@ export default function Dashboard() {
                 </div>
                 <div className="ml-5 w-0 flex-1">
                   <dl>
-                    <dt className={`text-sm font-medium truncate ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-                      Total Profit
-                    </dt>
+                    <dt className={`text-sm font-medium truncate ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Total Profit</dt>
                     <dd>
                       <div className={`text-lg font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                        {formatCurrency(stats.totalProfit)}
+                        {formatCurrency(stats?.totalProfit ?? 0)}
                       </div>
                     </dd>
                   </dl>
@@ -253,17 +256,15 @@ export default function Dashboard() {
               <div className="flex items-center">
                 <div className="flex-shrink-0 bg-yellow-500 rounded-md p-3">
                   <svg className="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a5 5 0 00-10 0v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2z" />
                   </svg>
                 </div>
                 <div className="ml-5 w-0 flex-1">
                   <dl>
-                    <dt className={`text-sm font-medium truncate ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-                      Average Margin
-                    </dt>
+                    <dt className={`text-sm font-medium truncate ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Average Margin</dt>
                     <dd>
                       <div className={`text-lg font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                        {formatPercentage(stats.averageMargin)}
+                        {formatPercentage(stats?.averageMargin ?? 0)}
                       </div>
                     </dd>
                   </dl>
@@ -282,9 +283,7 @@ export default function Dashboard() {
                 </div>
                 <div className="ml-5 w-0 flex-1">
                   <dl>
-                    <dt className={`text-sm font-medium truncate ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-                      Total Sales
-                    </dt>
+                    <dt className={`text-sm font-medium truncate ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Total Sales</dt>
                     <dd>
                       <div className={`text-lg font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                         {stats.totalSales}
@@ -306,9 +305,7 @@ export default function Dashboard() {
                 </div>
                 <div className="ml-5 w-0 flex-1">
                   <dl>
-                    <dt className={`text-sm font-medium truncate ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-                      Active Listings
-                    </dt>
+                    <dt className={`text-sm font-medium truncate ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Active Listings</dt>
                     <dd>
                       <div className={`text-lg font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                         {stats.activeListings}
@@ -330,9 +327,7 @@ export default function Dashboard() {
                 </div>
                 <div className="ml-5 w-0 flex-1">
                   <dl>
-                    <dt className={`text-sm font-medium truncate ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-                      Pending Orders
-                    </dt>
+                    <dt className={`text-sm font-medium truncate ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Pending Orders</dt>
                     <dd>
                       <div className={`text-lg font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                         {stats.pendingOrders}

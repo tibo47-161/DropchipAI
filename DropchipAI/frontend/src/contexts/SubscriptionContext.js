@@ -92,12 +92,12 @@ export function SubscriptionProvider({ children }) {
     try {
       setLoading(true);
       const response = await api.get('/subscription/status');
-      setCurrentPlan(response.data.plan);
+      setCurrentPlan(response.plan);
       setTokenUsage({
-        used: response.data.tokensUsed,
-        total: response.data.tokensTotal
+        used: response.tokensUsed,
+        total: response.tokensTotal
       });
-      setBillingHistory(response.data.billingHistory || []);
+      setBillingHistory(response.billingHistory || []);
       setLoading(false);
     } catch (error) {
       console.error('Failed to fetch subscription data:', error);

@@ -135,4 +135,18 @@ def get_dashboard_stats():
             {"name": "Smart Watch", "sales": 120},
             {"name": "Wireless Earbuds", "sales": 95}
         ]
+    }
+
+@router.get("/analytics/revenue")
+def get_revenue_stats(period: str = "month"):
+    # TODO: Später durch echte Umsatzdaten ersetzen
+    return {
+        "period": period,
+        "revenue": 4385.00,
+        "currency": "EUR",
+        "change": "+8.2%",
+        "history": [
+            {"month": "2025-05", "revenue": 4050.00},
+            {"month": "2025-06", "revenue": 4385.00}
+        ]
     } 
