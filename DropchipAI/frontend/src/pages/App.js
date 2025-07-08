@@ -19,6 +19,7 @@ import Login from './Login';
 import Register from './Register';
 import ForgotPassword from './ForgotPassword';
 import Subscription from './Subscription.js';
+import SuppliersPage from './SuppliersPage';
 // import NotFound from './NotFound'; // ggf. auskommentieren, wenn nicht vorhanden
 
 // Auth context
@@ -70,6 +71,7 @@ function App() {
                 {/* <Route path="/settings" element={<Settings />} /> */}
                 {/* <Route path="/profile" element={<Profile />} /> */}
                 <Route path="/subscription" element={<Subscription />} />
+                <Route path="/suppliers" element={<SuppliersPage />} />
               </Route>
               
               {/* 404 route */}
