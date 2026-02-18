@@ -3,4 +3,4 @@
 Security fixes applied.
 Vercel deployment configured.
 
-Build test.
+Build test with CI=false fix.
