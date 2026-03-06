@@ -1,6 +1,6 @@
 // src/layouts/AuthLayout.js
 import React from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { useTheme } from '../contexts/ThemeContext';
 
 export default function AuthLayout() {

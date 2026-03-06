@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
 import { 
   ShoppingCartIcon, 
-  PhotographIcon,
   PencilAltIcon,
   DuplicateIcon,
   TrashIcon,
   PlusCircleIcon,
-  ExternalLinkIcon,
-  TagIcon,
-  CurrencyDollarIcon,
   ChartBarIcon
 } from '@heroicons/react/outline';
 
@@ -397,6 +393,7 @@ export default function BulkLister() {
                     <div className="text-sm text-gray-900">{formatDate(listing.lastUpdated)}</div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                     <a href="#" className="text-indigo-600 hover:text-indigo-900">Edit</a>
                   </td>
                 </tr>

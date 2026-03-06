@@ -10,7 +10,6 @@ import {
   Legend
 } from 'recharts';
 import { useTheme } from '../contexts/ThemeContext';
-import api from '../services/api';
 
 export default function StockMonitor() {
   const { darkMode } = useTheme();
@@ -225,6 +224,7 @@ export default function StockMonitor() {
     };
     
     fetchProducts();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
   const handleProductSelect = (product) => {

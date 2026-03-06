@@ -10,12 +10,8 @@ import {
   BellIcon,
   MenuIcon,
   XIcon,
-  LightningBoltIcon,
   PhotographIcon,
   ClipboardCheckIcon,
-  UserCircleIcon,
-  LogoutIcon,
-  CreditCardIcon
 } from '@heroicons/react/outline';
 import { useAuth } from '../contexts/AuthContext';
 import { useSubscription } from '../contexts/SubscriptionContext';

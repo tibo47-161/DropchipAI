@@ -2,12 +2,7 @@ import React, { useState } from 'react';
 import { 
   SearchIcon, 
   TrendingUpIcon, 
-  ChartBarIcon, 
-  ShoppingCartIcon,
   FilterIcon,
-  SortAscendingIcon,
-  ExternalLinkIcon,
-  PlusCircleIcon,
   StarIcon
 } from '@heroicons/react/outline';
 

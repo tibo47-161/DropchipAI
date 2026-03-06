@@ -152,10 +152,12 @@ export default function Register() {
           />
           <label htmlFor="terms" className={`ml-2 block text-sm ${darkMode ? 'text-gray-300' : 'text-gray-900'}`}>
             I agree to the{' '}
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
               Terms of Service
             </a>{' '}
             and{' '}
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
               Privacy Policy
             </a>

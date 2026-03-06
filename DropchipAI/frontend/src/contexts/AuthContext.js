@@ -22,6 +22,7 @@ export function AuthProvider({ children }) {
     } else {
       setLoading(false);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const checkAuthStatus = async (token) => {
@@ -52,7 +53,7 @@ export function AuthProvider({ children }) {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
       });
       const access_token = response.access_token || response.token;
-      const role = response.role || 'user';
+      // const role = response.role || 'user'; // reserved for future use
       if (!access_token) throw new Error('No access token in response');
       localStorage.setItem('token', access_token);
       api.setAuthToken(access_token);

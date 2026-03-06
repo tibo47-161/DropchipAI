@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useSubscription } from '../contexts/SubscriptionContext';
 import { useTheme } from '../contexts/ThemeContext';
-import { CheckIcon, XIcon } from '@heroicons/react/outline';
+import { CheckIcon } from '@heroicons/react/outline';
 
 export default function Subscription() {
   const { darkMode } = useTheme();
@@ -10,7 +10,6 @@ export default function Subscription() {
     currentPlan, 
     plans, 
     tokenUsage, 
-    billingHistory,
     subscribeToPlan,
     cancelSubscription,
     upgradePlan,
@@ -19,9 +18,9 @@ export default function Subscription() {
     getRemainingTokens
   } = useSubscription();
   
-  const [selectedPlan, setSelectedPlan] = useState(null);
+  const [selectedPlan, setSelectedPlan] = useState(null); // eslint-disable-line no-unused-vars
   const [isProcessing, setIsProcessing] = useState(false);
-  const [showBillingHistory, setShowBillingHistory] = useState(false);
+  const [showBillingHistory, setShowBillingHistory] = useState(false); // eslint-disable-line no-unused-vars
   const [additionalTokens, setAdditionalTokens] = useState(100);
   
   const handleSubscribe = async (planId) => {
@@ -72,6 +71,7 @@ export default function Subscription() {
     }
   };
   
+  // eslint-disable-next-line no-unused-vars
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     return new Intl.DateTimeFormat('en-US', {
