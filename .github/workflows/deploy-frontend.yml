@@ -5,10 +5,12 @@ on:
     branches: [ main ]
     paths:
       - 'DropchipAI/frontend/**'
+      - '.github/workflows/deploy-frontend.yml'
   pull_request:
     branches: [ main ]
     paths:
       - 'DropchipAI/frontend/**'
+      - '.github/workflows/deploy-frontend.yml'
 
 jobs:
   build:
