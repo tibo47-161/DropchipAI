@@ -25,12 +25,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'npm'
-          cache-dependency-path: DropchipAI/frontend/package-lock.json
+          # Cache deaktiviert – verhindert veraltete/korrupte Cache-Probleme
 
       - name: Install dependencies
         working-directory: DropchipAI/frontend
-        run: npm ci
+        run: npm install --legacy-peer-deps
 
       - name: Run tests
         working-directory: DropchipAI/frontend
@@ -42,6 +41,7 @@ jobs:
         run: npm run build
         env:
           CI: false
+          GENERATE_SOURCEMAP: false
 
 # Deployment wird automatisch von Vercel via GitHub-Integration durchgeführt.
 # Kein manueller Vercel-CLI-Deploy notwendig.
