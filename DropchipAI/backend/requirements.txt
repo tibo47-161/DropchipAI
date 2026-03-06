@@ -6,13 +6,14 @@ numpy>=1.21.0,<2.0.0
 shopifyapi>=9.0.0
 ebaysdk>=2.2.0
 pytrends>=4.8.0
-jinja2>=3.0.0
+jinja2>=3.1.6
 pyyaml>=5.4.0
-requests>=2.26.0
+requests>=2.32.4
 
 # FastAPI stack
-fastapi==0.110.2
-uvicorn==0.29.0
+fastapi>=0.115.0
+uvicorn>=0.34.0
+starlette>=0.47.2
 sqlalchemy==2.0.30
 passlib[bcrypt]==1.7.4
 python-jose>=3.4.0
