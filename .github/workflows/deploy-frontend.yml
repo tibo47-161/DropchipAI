@@ -24,8 +24,9 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
-          # Cache deaktiviert – verhindert veraltete/korrupte Cache-Probleme
+          node-version: '20'
+          # Node 20 LTS required for serialize-javascript@7.x (uses crypto API)
+          # Cache disabled to prevent stale/corrupt cache build failures
 
       - name: Install dependencies
         working-directory: DropchipAI/frontend
