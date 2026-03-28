@@ -1,10 +1,10 @@
 # DropchipAI - Installations- und Setup-Anleitung
 
-## 🚀 Schnellstart
+## Schnellstart
 
 DropchipAI ist eine KI-gestützte Dropshipping-Automatisierungslösung, die E-Commerce-Prozesse über Plattformen wie Shopify und eBay optimiert.
 
-## 📋 Systemanforderungen
+## Systemanforderungen
 
 - **Python:** 3.11 oder höher
 - **Node.js:** 18.0 oder höher (für Frontend)
@@ -12,7 +12,7 @@ DropchipAI ist eine KI-gestützte Dropshipping-Automatisierungslösung, die E-Co
 - **RAM:** Mindestens 4GB (8GB empfohlen)
 - **Speicher:** Mindestens 2GB freier Speicherplatz
 
-## 🔧 Installation
+## Installation
 
 ### 1. Repository herunterladen
 
@@ -71,7 +71,7 @@ cd frontend
 npm install
 ```
 
-## 🚀 Erste Schritte
+## Erste Schritte
 
 ### Backend starten
 
@@ -89,7 +89,7 @@ npm start
 
 Das Frontend ist dann unter `http://localhost:3000` verfügbar.
 
-## 📖 Verwendung
+## Verwendung
 
 ### Kommandozeilen-Interface
 
@@ -110,7 +110,7 @@ python main.py --config /pfad/zu/ihrer/config.yaml --keywords "Gaming Maus"
 - `--log-level`: Log-Level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
 - `--config`: Pfad zu einer benutzerdefinierten Konfigurationsdatei
 
-## 🔑 API-Konfiguration
+## API-Konfiguration
 
 ### Shopify API einrichten
 
@@ -132,37 +132,37 @@ python main.py --config /pfad/zu/ihrer/config.yaml --keywords "Gaming Maus"
 4. Generieren Sie ein Auth-Token
 5. Kopieren Sie alle Werte in `config/credentials.yaml`
 
-## 📁 Projektstruktur
+## Projektstruktur
 
 ```
 DropchipAI/
-├── backend/                 # Python-Backend
-│   ├── src/
-│   │   ├── ai/             # KI-Module
-│   │   │   ├── product_research.py
-│   │   │   ├── supplier_scorer.py
-│   │   │   └── listing_generator.py
-│   │   ├── api/            # API-Integrationen
-│   │   │   ├── shopify/
-│   │   │   └── ebay/
-│   │   ├── core/           # Kernkomponenten
-│   │   └── utils/          # Hilfsfunktionen
-│   ├── config/             # Konfigurationsdateien
-│   ├── logs/               # Log-Dateien
-│   ├── data/               # Datenverzeichnis
-│   ├── main.py             # Haupteinstiegspunkt
-│   └── requirements.txt    # Python-Dependencies
-├── frontend/               # React-Frontend
-│   ├── components/         # React-Komponenten
-│   ├── pages/              # Seiten
-│   ├── services/           # API-Services
-│   └── package.json        # Node.js-Dependencies
-├── tests/                  # Tests
-├── README.md               # Hauptdokumentation
-└── INSTALLATION.md         # Diese Datei
+ backend/ # Python-Backend
+ src/
+ ai/ # KI-Module
+ product_research.py
+ supplier_scorer.py
+ listing_generator.py
+ api/ # API-Integrationen
+ shopify/
+ ebay/
+ core/ # Kernkomponenten
+ utils/ # Hilfsfunktionen
+ config/ # Konfigurationsdateien
+ logs/ # Log-Dateien
+ data/ # Datenverzeichnis
+ main.py # Haupteinstiegspunkt
+ requirements.txt # Python-Dependencies
+ frontend/ # React-Frontend
+ components/ # React-Komponenten
+ pages/ # Seiten
+ services/ # API-Services
+ package.json # Node.js-Dependencies
+ tests/ # Tests
+ README.md # Hauptdokumentation
+ INSTALLATION.md # Diese Datei
 ```
 
-## 🔧 Fehlerbehebung
+## Fehlerbehebung
 
 ### Häufige Probleme
 
@@ -193,7 +193,7 @@ Log-Dateien werden in `backend/logs/` gespeichert:
 - `dropchipai_YYYYMMDD.log`: Tägliche Log-Dateien
 - Verwenden Sie `--log-level DEBUG` für detaillierte Informationen
 
-## 🛡️ Sicherheit
+## ️ Sicherheit
 
 ### Wichtige Sicherheitshinweise
 
@@ -209,7 +209,7 @@ Log-Dateien werden in `backend/logs/` gespeichert:
 - Keine Daten werden an Dritte weitergegeben
 - API-Aufrufe erfolgen direkt an die jeweiligen Plattformen
 
-## 📞 Support
+## Support
 
 ### Dokumentation
 - Lesen Sie die vollständige Dokumentation in `README.md`
@@ -244,7 +244,7 @@ grep "ERROR" backend/logs/dropchipai_*.log
    pip install --upgrade -r requirements.txt
    ```
 
-## 🚀 Produktionsbereitschaft
+## Produktionsbereitschaft
 
 ### Vor dem Live-Gang
 
@@ -262,5 +262,5 @@ grep "ERROR" backend/logs/dropchipai_*.log
 
 ---
 
-**Viel Erfolg mit DropchipAI! 🎉**
+**Viel Erfolg mit DropchipAI! **
 

@@ -1,4 +1,4 @@
-# 🤖 DropchipAI - KI-gestützte Dropshipping-Automatisierung
+# DropchipAI - KI-gestützte Dropshipping-Automatisierung
 
 [![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://python.org)
 [![React](https://img.shields.io/badge/React-18.0+-61DAFB.svg)](https://reactjs.org)
@@ -6,67 +6,67 @@
 
 **DropchipAI** ist eine revolutionäre KI-gestützte Dropshipping-Automatisierungslösung, die E-Commerce-Prozesse über Plattformen wie Shopify und eBay optimiert. Das System kombiniert künstliche Intelligenz mit E-Commerce-Automatisierung, um den zeitaufwändigen Prozess des Produktfindens, Listens und Verkaufens zu vereinfachen und zu optimieren.
 
-## 🌟 Hauptfunktionen
+## Hauptfunktionen
 
-### 🤖 KI-gestützte Features
+### KI-gestützte Features
 - **Automatisierte Produktrecherche**: Identifizierung rentabler Produkte durch Marktanalyse und Google Trends
 - **Intelligente Lieferantenbewertung**: Bewertung und Scoring von Lieferanten basierend auf Preis, Qualität und Lieferzeit
 - **Content-Erstellung mit KI**: Automatische Generierung von SEO-optimierten Produktbeschreibungen
 
-### 🔗 Multi-Platform Integration
+### Multi-Platform Integration
 - **Shopify-Integration**: Vollautomatisches Produktlisting und Inventory-Management
 - **eBay-Integration**: Automatisches Auktions-/Sofortkauf-Listing mit Kategorie-Optimierung
 - **Erweiterbar**: Einfache Integration weiterer Plattformen
 
-### 📊 Business Intelligence
+### Business Intelligence
 - **Preisoptimierung**: Konkurrenzanalyse und dynamische Preisanpassung
 - **Gewinnmargen-Analyse**: Automatische Berechnung optimaler Verkaufspreise
 - **Trend-Analyse**: Identifikation von Trending-Produkten mit hohem Verkaufspotenzial
 
-### 🚀 Vollautomatisierung
+### Vollautomatisierung
 - **End-to-End Workflow**: Von der Produktrecherche bis zum Listing
 - **Fehlerbehandlung**: Robuste Fehlerbehandlung und Logging
 - **Performance-Monitoring**: Überwachung und Optimierung der Systemleistung
 
-## 🏗️ Architektur
+## ️ Architektur
 
 ### Backend (Python)
 ```
 backend/
-├── src/
-│   ├── ai/                 # KI-Module
-│   │   ├── product_research.py    # Produktrecherche mit Google Trends
-│   │   ├── supplier_scorer.py     # Lieferantenbewertung
-│   │   └── listing_generator.py   # Content-Generierung
-│   ├── api/                # API-Integrationen
-│   │   ├── shopify/        # Shopify API-Connector
-│   │   └── ebay/           # eBay API-Connector
-│   ├── core/               # Kernkomponenten
-│   │   ├── DropchipCore.py # Hauptlogik
-│   │   ├── automation.py   # Automatisierungsmanager
-│   │   └── config_manager.py # Konfigurationsverwaltung
-│   └── utils/              # Hilfsfunktionen
-│       ├── logger.py       # Logging-System
-│       └── data_loader.py  # Datenverarbeitung
-├── config/                 # Konfigurationsdateien
-├── main.py                 # Haupteinstiegspunkt
-└── requirements.txt        # Python-Dependencies
+ src/
+ ai/ # KI-Module
+ product_research.py # Produktrecherche mit Google Trends
+ supplier_scorer.py # Lieferantenbewertung
+ listing_generator.py # Content-Generierung
+ api/ # API-Integrationen
+ shopify/ # Shopify API-Connector
+ ebay/ # eBay API-Connector
+ core/ # Kernkomponenten
+ DropchipCore.py # Hauptlogik
+ automation.py # Automatisierungsmanager
+ config_manager.py # Konfigurationsverwaltung
+ utils/ # Hilfsfunktionen
+ logger.py # Logging-System
+ data_loader.py # Datenverarbeitung
+ config/ # Konfigurationsdateien
+ main.py # Haupteinstiegspunkt
+ requirements.txt # Python-Dependencies
 ```
 
 ### Frontend (React)
 ```
 frontend/
-├── components/             # React-Komponenten
-│   ├── Dashboard.js        # Haupt-Dashboard
-│   ├── StockMonitor.js     # Lagerbestandsüberwachung
-│   └── WorkflowAutomation.js # Workflow-Management
-├── contexts/               # React-Kontexte
-├── pages/                  # Anwendungsseiten
-├── services/               # API-Services
-└── package.json            # Node.js-Dependencies
+ components/ # React-Komponenten
+ Dashboard.js # Haupt-Dashboard
+ StockMonitor.js # Lagerbestandsüberwachung
+ WorkflowAutomation.js # Workflow-Management
+ contexts/ # React-Kontexte
+ pages/ # Anwendungsseiten
+ services/ # API-Services
+ package.json # Node.js-Dependencies
 ```
 
-## 🚀 Schnellstart
+## Schnellstart
 
 ### 1. Installation
 
@@ -121,7 +121,7 @@ cd frontend
 npm start
 ```
 
-## 💡 Verwendungsbeispiele
+## Verwendungsbeispiele
 
 ### Grundlegende Produktrecherche
 
@@ -153,7 +153,7 @@ processed_count = core.full_automation(keywords)
 print(f"Verarbeitete Produkte: {processed_count}")
 ```
 
-## 🔧 Konfiguration
+## Konfiguration
 
 ### Einstellungen (`config/settings.yaml`)
 
@@ -188,7 +188,7 @@ google:
   api_key: "ihr_google_api_key"  # Für Google Trends
 ```
 
-## 📊 Features im Detail
+## Features im Detail
 
 ### 1. Produktrecherche
 
@@ -232,7 +232,7 @@ generator = ListingGenerator()
 listing = generator.generate_listing(product_data, platform='shopify')
 ```
 
-## 🔌 API-Integrationen
+## API-Integrationen
 
 ### Shopify API
 
@@ -270,7 +270,7 @@ item_data = {
 listed_item = ebay.list_item(item_data)
 ```
 
-## 📈 Monitoring und Logging
+## Monitoring und Logging
 
 ### Log-System
 
@@ -288,7 +288,7 @@ logger.error("API-Fehler aufgetreten")
 - **Fehlerbehandlung**: Robuste Fehlerbehandlung mit detailliertem Logging
 - **API-Rate-Limiting**: Automatische Behandlung von API-Limits
 
-## 🛡️ Sicherheit und Best Practices
+## ️ Sicherheit und Best Practices
 
 ### Sicherheitsfeatures
 
@@ -305,7 +305,7 @@ logger.error("API-Fehler aufgetreten")
 4. **Testen Sie neue Keywords** in kleinen Batches
 5. **Überwachen Sie die Logs** auf Fehler
 
-## 🔧 Erweiterte Funktionen
+## Erweiterte Funktionen
 
 ### Batch-Verarbeitung
 
@@ -346,14 +346,14 @@ webhook_config = {
 }
 ```
 
-## 📚 Dokumentation
+## Dokumentation
 
 - **[Installation](INSTALLATION.md)**: Detaillierte Installationsanleitung
 - **[API-Dokumentation](docs/API.md)**: Vollständige API-Referenz
 - **[Konfiguration](docs/CONFIGURATION.md)**: Erweiterte Konfigurationsoptionen
 - **[Troubleshooting](docs/TROUBLESHOOTING.md)**: Fehlerbehebung und FAQ
 
-## 🤝 Beitragen
+## Beitragen
 
 Wir freuen uns über Beiträge! Bitte lesen Sie unsere [Contribution Guidelines](CONTRIBUTING.md) für Details.
 
@@ -387,11 +387,11 @@ cd frontend
 npm test
 ```
 
-## 📄 Lizenz
+## Lizenz
 
 Dieses Projekt ist unter der MIT-Lizenz lizenziert - siehe [LICENSE](LICENSE) für Details.
 
-## 🙏 Danksagungen
+## Danksagungen
 
 - **Shopify API**: Für die umfassende E-Commerce-Integration
 - **eBay API**: Für die Marktplatz-Integration
@@ -399,7 +399,7 @@ Dieses Projekt ist unter der MIT-Lizenz lizenziert - siehe [LICENSE](LICENSE) f�
 - **React**: Für das moderne Frontend-Framework
 - **Python Community**: Für die exzellenten Bibliotheken
 
-## 📞 Support
+## Support
 
 ### Community
 
@@ -414,7 +414,7 @@ Für kommerzielle Unterstützung und Enterprise-Features kontaktieren Sie uns un
 
 ---
 
-**Entwickelt mit ❤️ für die E-Commerce-Community**
+**Entwickelt mit ️ für die E-Commerce-Community**
 
 *DropchipAI - Automatisieren Sie Ihr Dropshipping-Business mit der Kraft der KI!*
 

@@ -31,22 +31,22 @@ Das Frontend ist mit React.js implementiert und verwendet moderne Praktiken für
 
 ```
 App.js
-├── AuthContext.js (Authentifizierungszustand)
-├── SubscriptionContext.js (Abonnementzustand)
-├── ThemeContext.js (Themenzustand)
-│
-├── AuthLayout.js (Layout für nicht authentifizierte Benutzer)
-│   ├── Login.js
-│   ├── Register.js
-│   └── ForgotPassword.js
-│
-└── MainLayout.js (Layout für authentifizierte Benutzer)
-    ├── Dashboard.js (Hauptdashboard)
-    ├── WorkflowAutomation.js (Workflow-Automatisierung)
-    ├── StockMonitor.js (Bestandsüberwachung)
-    ├── Subscription.js (Abonnementverwaltung)
-    ├── bulk_lister.jsx (Bulk-Listing-Tool)
-    └── product_research.jsx (Produktrecherche-Tool)
+ AuthContext.js (Authentifizierungszustand)
+ SubscriptionContext.js (Abonnementzustand)
+ ThemeContext.js (Themenzustand)
+
+ AuthLayout.js (Layout für nicht authentifizierte Benutzer)
+ Login.js
+ Register.js
+ ForgotPassword.js
+
+ MainLayout.js (Layout für authentifizierte Benutzer)
+ Dashboard.js (Hauptdashboard)
+ WorkflowAutomation.js (Workflow-Automatisierung)
+ StockMonitor.js (Bestandsüberwachung)
+ Subscription.js (Abonnementverwaltung)
+ bulk_lister.jsx (Bulk-Listing-Tool)
+ product_research.jsx (Produktrecherche-Tool)
 ```
 
 ### Zustandsverwaltung
@@ -74,28 +74,28 @@ Das Backend ist in Python implementiert und folgt einer modularen Struktur für 
 
 ```
 main.py (Haupteinstiegspunkt)
-│
-├── src/core/
-│   ├── automation.py (Automatisierungsmanager)
-│   └── config_manager.py (Konfigurationsmanager)
-│
-├── src/utils/
-│   ├── logger.py (Logging-Funktionalität)
-│   └── data_loader.py (Datenlader)
-│
-├── src/api/
-│   ├── shopify/
-│   │   ├── __init__.py
-│   │   └── connector.py (Shopify-API-Integration)
-│   │
-│   └── ebay/
-│       ├── __init__.py
-│       └── connector.py (eBay-API-Integration)
-│
-└── src/ai/
-    ├── product_research.py (Produktrecherche)
-    ├── supplier_scorer.py (Lieferantenbewertung)
-    └── listing_generator.py (Listing-Generator)
+
+ src/core/
+ automation.py (Automatisierungsmanager)
+ config_manager.py (Konfigurationsmanager)
+
+ src/utils/
+ logger.py (Logging-Funktionalität)
+ data_loader.py (Datenlader)
+
+ src/api/
+ shopify/
+ __init__.py
+ connector.py (Shopify-API-Integration)
+
+ ebay/
+ __init__.py
+ connector.py (eBay-API-Integration)
+
+ src/ai/
+ product_research.py (Produktrecherche)
+ supplier_scorer.py (Lieferantenbewertung)
+ listing_generator.py (Listing-Generator)
 ```
 
 ### Kernkomponenten

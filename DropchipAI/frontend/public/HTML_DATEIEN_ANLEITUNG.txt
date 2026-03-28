@@ -1,7 +1,7 @@
-🗂️ HTML-DATEIEN FÜR DROPCHIPAI FRONTEND
+️ HTML-DATEIEN FÜR DROPCHIPAI FRONTEND
 ==========================================
 
-📁 SPEICHERORTE:
+ SPEICHERORTE:
 ================
 
 1. public_index.html
@@ -17,7 +17,7 @@
 4. 404.html (optional)
    → Speichern in: DropchipAI/frontend/public/404.html
 
-🚀 SCHNELLE INSTALLATION:
+ SCHNELLE INSTALLATION:
 =========================
 
 1. Laden Sie alle 4 Dateien herunter
@@ -26,21 +26,21 @@
 4. Kopieren Sie alle Dateien hinein
 5. Benennen Sie "public_index.html" um zu "index.html"
 
-📋 FINALE STRUKTUR:
+ FINALE STRUKTUR:
 ===================
 
 DropchipAI/
-├── frontend/
-│   ├── public/
-│   │   ├── index.html        ← HAUPTDATEI
-│   │   ├── manifest.json     ← PWA-Manifest
-│   │   ├── robots.txt        ← SEO
-│   │   └── 404.html          ← Fehlerseite
-│   ├── src/
-│   └── package.json
-└── backend/
+ frontend/
+ public/
+ index.html ← HAUPTDATEI
+ manifest.json ← PWA-Manifest
+ robots.txt ← SEO
+ 404.html ← Fehlerseite
+ src/
+ package.json
+ backend/
 
-✅ DANACH FUNKTIONIERT:
+ DANACH FUNKTIONIERT:
 =======================
 
 cd DropchipAI/frontend
@@ -49,7 +49,7 @@ npm start
 
 → Frontend läuft auf http://localhost:3000
 
-🎯 WICHTIG:
+ WICHTIG:
 ===========
 Die index.html ist die wichtigste Datei!
 Ohne sie startet React nicht.

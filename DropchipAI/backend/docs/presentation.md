@@ -21,38 +21,38 @@ Das DropchipAi-Projekt ist in folgende Hauptkomponenten unterteilt:
 
 ```
 DropchipAi/
-├── docs/                 # Dokumentation
-│   ├── README.md                    # Allgemeine Projektbeschreibung
-│   ├── project_overview.md          # Detaillierte Projektübersicht
-│   ├── technical_documentation.md   # Technische Dokumentation
-│   ├── user_manual_organized.md     # Benutzerhandbuch
-│   ├── improvement_deployment_strategy.md  # Verbesserungsplan und Deployment-Strategie
-│   ├── commercial_deployment_strategy.md   # Kommerzielle Deployment-Strategie
-│   ├── project_improvement_summary.md      # Zusammenfassung der Projektverbesserungen
-│   └── LICENSE.txt                  # Lizenzinformationen
-│
-├── frontend/             # Frontend-Komponenten (React.js)
-│   ├── components/       # Wiederverwendbare UI-Komponenten
-│   ├── contexts/         # Globale Zustandsverwaltung
-│   ├── layouts/          # Seitenlayouts
-│   ├── pages/            # Hauptseiten der Anwendung
-│   └── services/         # API-Dienste
-│
-├── backend/              # Backend-Komponenten (Python)
-│   ├── src/
-│   │   ├── core/         # Kernkomponenten
-│   │   ├── utils/        # Hilfsfunktionen
-│   │   ├── api/          # API-Integrationen
-│   │   │   ├── shopify/  # Shopify-Integration
-│   │   │   └── ebay/     # eBay-Integration
-│   │   └── ai/           # KI-Module
-│   ├── config/           # Konfigurationsdateien
-│   ├── main.py           # Haupteinstiegspunkt
-│   └── requirements.txt  # Python-Abhängigkeiten
-│
-└── tests/                # Tests
-    ├── frontend/         # Frontend-Tests
-    └── backend/          # Backend-Tests
+ docs/ # Dokumentation
+ README.md # Allgemeine Projektbeschreibung
+ project_overview.md # Detaillierte Projektübersicht
+ technical_documentation.md # Technische Dokumentation
+ user_manual_organized.md # Benutzerhandbuch
+ improvement_deployment_strategy.md # Verbesserungsplan und Deployment-Strategie
+ commercial_deployment_strategy.md # Kommerzielle Deployment-Strategie
+ project_improvement_summary.md # Zusammenfassung der Projektverbesserungen
+ LICENSE.txt # Lizenzinformationen
+
+ frontend/ # Frontend-Komponenten (React.js)
+ components/ # Wiederverwendbare UI-Komponenten
+ contexts/ # Globale Zustandsverwaltung
+ layouts/ # Seitenlayouts
+ pages/ # Hauptseiten der Anwendung
+ services/ # API-Dienste
+
+ backend/ # Backend-Komponenten (Python)
+ src/
+ core/ # Kernkomponenten
+ utils/ # Hilfsfunktionen
+ api/ # API-Integrationen
+ shopify/ # Shopify-Integration
+ ebay/ # eBay-Integration
+ ai/ # KI-Module
+ config/ # Konfigurationsdateien
+ main.py # Haupteinstiegspunkt
+ requirements.txt # Python-Abhängigkeiten
+
+ tests/ # Tests
+ frontend/ # Frontend-Tests
+ backend/ # Backend-Tests
 ```
 
 ## Technologiestack

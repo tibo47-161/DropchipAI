@@ -1,4 +1,4 @@
-# 🚀 Vercel Deployment Guide
+# Vercel Deployment Guide
 
 ## Automatisches Frontend-Deployment mit GitHub Actions
 
@@ -40,11 +40,11 @@ Füge diese Secrets hinzu:
 Nach dem Setup wird bei jedem Push auf `main` automatisch deployed!
 
 ### Features
-- ✅ Automatisches Deploy bei Push
-- ✅ Preview-Deployments für Pull Requests
-- ✅ Automatische Tests vor Deploy
-- ✅ HTTPS/SSL automatisch
-- ✅ CDN für schnelle Ladezeiten
+- Automatisches Deploy bei Push
+- Preview-Deployments für Pull Requests
+- Automatische Tests vor Deploy
+- HTTPS/SSL automatisch
+- CDN für schnelle Ladezeiten
 
 ### URLs
 - **Production**: `https://your-project.vercel.app`
